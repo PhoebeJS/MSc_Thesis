@@ -19,6 +19,13 @@ df_bl_results.columns = df_bl_results.columns.str.replace(" ", "_").str.lower()
 df_bl_results = df_bl_results.rename(columns={"sd_cer.1": "sd_wer"})
 df_nhm_results.columns = df_nhm_results.columns.str.replace(" ", "_").str.lower()
 
+
+## Paired T tests
+# Paired t-test looks at the differences between two matched measurements. For each pair you compute the difference. Then the test asks of that list of differences: is the average of them meaningfully far from zero. If the two groups are equivalent, you'd expect differences to scatter randomly around zero. If there was a real effect, differences should lean consistently in one direction.
+
+# It's paired (as opposed to just comparing two lists of numbers) because it is deliberatly ignoring overall variability and focusing only on between two conditions comparison. So it needs matched pairs between the two groups. 
+
+
 ##########
 # BL T-test
 cer_pivoted = df_bl_results.pivot_table(index=["image_one_or_few_shot?", "if_using_ex,_is_ex_dataset_wholly_specific?"], columns = "model", values = "overall_cer_mean")
