@@ -122,6 +122,29 @@ table_prompt_format_transcriptions = {
 }
 
 
+unstructured_prompt_format_transcriptions = {
+    #"title": "TranscriptionTable",
+    "type": "object", # Model knows output must be JSON object
+    "properties": {      
+        # Each key here defines one field the model may populate. Description is the lever for steering behaviour since the model will read it as a natural-language instruction on how to fill that field
+        "page_type": {
+            # Tells the model there are 3 allowed values (text, table & mixed)
+            "type": "string",
+            "enum": ["text", "table", "mixed"],
+            "description": "Classify the page as 'text' if it contains only prose/unstructured text, 'table' if it contains only a table, or 'mixed' if it contains both."
+        },
+        "text_transcription": {
+            # Tells the model when to populate the key & how. Default is a fallback if the model doesn't fill
+            "type": "string",
+            "description": "A full length transcription of the image input that follows the natural reading order of the page. Only include text within the image. Do not add or adjust language or make grammatical corrections. Required if page_type is 'text', 'table' or 'mixed'.",
+            "default": "Could not transcribe."
+        }
+    },
+    "required": ["page_type"],
+    "additionalProperties": False
+}
+
+
 # String to JSON function
 # Purpose: The model outputs a string but we want a structured JSON output 
 def string_to_json(json_string):
