@@ -1,0 +1,44 @@
+Based on the transcribed text of the record, you are tasked with identifying any species named, along with an associated location and date of their identification or collection.Let's think through the following tasks step by step.
+
+When transcribing across species, location and dates, if the transcription is in a table format and uses ditto marks (") to indicate that the value from the cell directly above it should be carried down, transcribe the cell contents as the full value from above, not the ditto mark itself.
+
+
+# speciesName
+
+Your first task is to determine if there are any mentions of species within the record. Species may be listed by their latin binomial or trinomial nomenclature. They may also be mentioned by a higher taxonomic rank, including order, family, or genus. Record the name as given, no matter the rank. Include the name as is, do not correct for misspellings or historic name differences. 
+
+If another species is mentioned as tansgential to the main species of interest (for example if a pest or parasite is mentioned in the notes in relation to the main species), do not extract it.
+
+
+
+#  verbatimLocality
+
+Your second task is, for each species, determine through the record if there is an associated location that corresponds to where the species may have been identified or collected from. 
+
+A location may contain multiple details or one, and at varying scales (ex: municipality may be given along with country, or just the continent may be given). Report the location verbatim, including any misspellings or historical locations.
+
+
+
+# date
+
+Your final task for each species is to determine through the transcribed record if there is an associated date that corresponds to where the species may have been identified or collected from. 
+
+Only list a date if there is one present within the record and that can be directly tied to the species. If dates are mentioned in the transcribed record but are not related to where the species was found, spotted, captured, etc do NOT include those dates. 
+
+Include the date in a numeric format including only the year (example: if date is given as 'day-month-year', take only 'year'). If the date is in long format, convert it into the numeric and extract the year. Report the year with its century number even if only given the last two digits. If only a year is given, just report the year. If multiple dates are reported, extract the oldest date only if that date is linked to the species being alive.
+
+Dates may be listed in their own column (or as their own distinct value in a row list). If they are not listed however, the year can be found in the first value of every row list. This value looks like a four-digit number followed by three more values separated by '.' (Example: 1961.8.9.77). The first value is the year the species was recorded in the record and can be listed as the 'date'. 
+
+
+# verbatimDate
+
+Also report the date as verbatim, no matter its format. This includes reporting verbatim the year if it is extracted from the first value in a row list. 
+
+
+
+# Important
+
+- Do not correct for historical misspellings or conventions for species, locations or dates.
+- If a text mentions multiple synonyms of a species, only list one (ideally the more common/newest one).
+
+For any piece of information: If nothing about it is mentioned or suggested in the text, leave it empty.
