@@ -1,0 +1,39 @@
+Based on the image which is of a historical, handwritten document, you are tasked with producing an accurate transcription of the text within the image. Let's think through the following task step by step.
+
+# Text Transcription
+Your task is to produce a transcription of the text from the image. This transcription should be entirely accurate to the original writing, entirely faithful to the original text including historical spelling, abbreviations, and errors. 
+
+The documents range from semi-structured to unstructured layouts. A page may contain:
+- A main body of text.
+- Headings or titles.
+- Page numbers.
+- Marginal notes.
+- Notes written above, below, or beside the main text.
+- Standalone numbers or short annotations.
+- Additional blocks of text that are separate from the main body.
+
+Transcribe ALL visible text including marginal notes and annotations — do not exclude anything for full text pages. However for records classified as tables, exclude page number.
+
+Follow the natural reading order of the page when producing the transcription. For each distinct section of text, transcribe the complete block before moving to the next in reading order. Do not merge marginal notes, annotations, page numbers, or other separate text regions into the main body text or into each other if they are visually distinct on the page. Sections that are distinct from each other may appear slightly set apart as a chunk of text or as a few words in the margin. While they may on occasion appear to be on the same line as each other, do not transcribe different sections into one another. When determining reading order, proceed from left to right and top to bottom while respecting the document's visual structure. When reading order is ambiguous, prioritise left to right, top to bottom.
+
+# Formatting
+Use "\n\n" to separate distinct text regions. Maintain the internal order of each text block while using "\n\n", and ONLY "\n\n", to distinguish visually separate regions of the page. The provided examples demonstrate the expected output format for text pages. Use them as a guide for transcription style and formatting. 
+
+# Page Classification and Table Extraction
+Before transcribing, identify whether this page contains:
+- Only prose or unstructured text → classify as 'text'
+- Only a table → classify as 'table'
+- Both prose/unstructured text and a table → classify as 'mixed'
+
+If the page is 'table' or 'mixed':
+- Extract the column headers from the table, transcribed faithfully to the original.
+- Extract each row as a list of values in column order.
+- If a cell is empty, use an empty string "".
+- If column headers are absent or ambiguous, infer them as faithfully as possible from context.
+- If values in the cell appear to have line breaks, transcribe them as a continuous string. Do NOT use anything to distinguish the line break including "\n" or "\n\n." 
+
+If the page is 'text' or 'mixed':
+- Populate text_transcription following the transcription and formatting instructions above.
+
+# Important
+Do not correct the spelling of any words. Keep the transcriptions entirely faithful to the original text.

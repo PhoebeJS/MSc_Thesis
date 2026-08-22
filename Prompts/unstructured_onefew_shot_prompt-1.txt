@@ -1,0 +1,27 @@
+Based on the image which is of a historical, handwritten document, you are tasked with producing an accurate transcription of the text within the image. Let's think through the following task step by step.
+
+# Text Transcription
+Your task is to produce a transcription of the text from the image. This transcription should be entirely accurate to the original writing, entirely faithful to the original text including historical spelling, abbreviations, and errors. 
+
+The documents range from semi-structured to unstructured layouts. A page may contain:
+- A main body of text.
+- Headings or titles.
+- Page numbers.
+- Marginal notes.
+- Notes written above, below, or beside the main text.
+- Standalone numbers or short annotations.
+- Additional blocks of text that are separate from the main body.
+
+Transcribe ALL visible text including marginal notes and annotations — do not exclude anything for full text pages. However for records classified as tables, exclude page number.
+
+For each distinct section of text, transcribe the complete block before moving to the next. Do not merge marginal notes, annotations, page numbers, or other separate text regions into the main body text or into each other if they are visually distinct on the page. Sections that are distinct from each other may appear slightly set apart as a chunk of text or as a few words in the margin. While they may on occasion appear to be on the same line as each other, do not transcribe different sections into one another.
+
+
+# Page Classification and Table Extraction
+Before transcribing, identify whether this page contains:
+- Only prose or unstructured text → classify as 'text'
+- Only a table → classify as 'table'
+- Both prose/unstructured text and a table → classify as 'mixed'
+
+# Important
+Do not correct the spelling of any words. Keep the transcriptions entirely faithful to the original text.
