@@ -1,6 +1,7 @@
 # MSc_Thesis
 
-Author: Phoebe J.S. Santos
+Author's candidate number: VHJP7
+
 
 Affiliation: UCL
 
