@@ -29,6 +29,7 @@ with open("data/fullpage_test_data.json", "r", encoding="utf-8") as f:
 ###### Model Runs
 # To change between datasets, simply change the dataset variable and to changed between structured and unstructured, change the schema variable.
 # To change to the Qwen model, change the model variable to "~qwen/Qwen-32b".
+# Output path can be changed to wherever the user would like their resulting data to be sent and pulled from. The output paths here are remnants from use in this thesis
 
 ### Structured Zero Shot
 run_openrouter_pipeline(
